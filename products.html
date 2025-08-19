@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <title>Autos</title>
   <style>
+    main {
+      padding: 20px;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #f3f3f3;
@@ -11,6 +19,9 @@
     }
     h1 {
       margin-bottom: 20px;
+    }
+    #product-list {
+      width: 60%;
     }
     .product-card {
       display: flex;
@@ -20,6 +31,7 @@
       padding: 15px;
       border-radius: 10px;
       margin-bottom: 15px;
+      width: 100%;
     }
     .product-info {
       display: flex;
@@ -43,39 +55,76 @@
     .sold {
       color: #555;
       font-size: 14px;
+      align-self: flex-end;
+      font-weight: bold;
     }
   </style>
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h1>Autos</h1> 
+    <div id="product-list"></div>
+    
+    <script>
+    
+      const url = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
-  <h1>Autos</h1>
-
-  <div id="product-list"></div>
-
-  <script>
-   
-    const url = "https://japceibal.github.io/emercado-api/cats_products/101.json";
-
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        let container = document.getElementById("product-list");
-        data.products.forEach(prod => {
-          container.innerHTML += `
-            <div class="product-card">
-              <div class="product-info">
-                <img src="${prod.image}" alt="${prod.name}">
-                <div class="product-text">
-                  <h2>${prod.name}</h2>
-                  <p>${prod.description}</p>
-                  <p class="price">U$S ${prod.cost}</p>
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          let container = document.getElementById("product-list");
+          data.products.forEach(prod => {
+            container.innerHTML += `
+              <div class="product-card">
+                <div class="product-info">
+                  <img src="${prod.image}" alt="${prod.name}">
+                  <div class="product-text">
+                    <h2>${prod.name}</h2>
+                    <p>${prod.description}</p>
+                    <p class="price">U$S ${prod.cost}</p>
+                  </div>
                 </div>
+                <div class="sold">${prod.soldCount} vendidos</div>
               </div>
-              <div class="sold">${prod.soldCount} vendidos</div>
-            </div>
-          `;
+            `;
+          });
         });
-      });
-  </script>
+    </script>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+    </div>
+  </footer>
 </body>
 </html>
