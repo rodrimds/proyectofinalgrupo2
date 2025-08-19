@@ -188,3 +188,50 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+/* Login Page Styles */
+#usuario,
+#password {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+#loginButton {
+  width: 80%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+#loginButton:hover {
+  background-color: #0056b3;
+}
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  height: auto;
+  width: 40%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0px 8px rgba(18, 70, 212, 0.6);
+  margin-bottom: auto;
+  padding-bottom: 30px;
+}
+
+#loginImage{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  justify-self: top;
+}
+main{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
