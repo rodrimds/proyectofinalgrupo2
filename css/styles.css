@@ -176,7 +176,11 @@ footer p {
 }
 
 main {
-  min-height: calc(100vh - 210px);
+  /* Elimina el display:flex que causaba que los elementos se pongan al costado */
+  /* display: flex;
+  justify-content: center; */
+  width: 100%;
+  height: auto;
 }
 
 a.custom-card,
@@ -228,10 +232,4 @@ a.custom-card:hover {
   height: auto;
   border-radius: 10px;
   justify-self: top;
-}
-main{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: auto;
 }
