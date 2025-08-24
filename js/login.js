@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Por favor, completa todos los campos.');
         } else {
             alert('Inicio de sesión exitoso');
-            sessionStorage.setItem('userSession', usuario);
-            window.location.href = 'index.html'; // Redirige a la página principal
+            sessionStorage.setItem('userSession', usuario); // Guarda la sesión
+            window.location.href = 'index.html'; // Redirige al index.html
         }
     }
 })
