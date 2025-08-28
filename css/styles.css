@@ -188,3 +188,7 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+#loginInfo {
+  color: white;
+  font-weight: bold;
+}

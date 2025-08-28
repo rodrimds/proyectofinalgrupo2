@@ -39,3 +39,7 @@ let getJSONData = function(url){
         return result;
     });
 }
+document.addEventListener("DOMContentLoaded", function(){
+  const usarioInfo = sessionStorage.getItem('userSession');
+  document.getElementById("loginInfo").innerHTML = usarioInfo;
+  });
