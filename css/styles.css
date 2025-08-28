@@ -189,6 +189,7 @@ a.custom-card:hover {
   color: orange;
 }
 /* Login Page Styles */
+@media (min-width: 1024px) {
 #usuario,
 #password {
   width: 80%;
@@ -234,6 +235,7 @@ main{
   justify-content: center;
   width: 100%;
   height: auto;
+}
 }
 /* Tablet */
 @media (min-width: 768px) {
