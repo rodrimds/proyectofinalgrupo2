@@ -62,6 +62,19 @@ main{
     margin-top: 10vw;
     box-shadow: none;
   }
+
+  #password, #usuario, #loginButton {
+    width: 90%;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  #password, #usuario {
+    border: 2px solid #ccc;
+  }
+  #password, #usuario, #loginImage{
+    margin: 1.4rem;
+  }
   .container{
     font-size: 0.75rem;
   }
